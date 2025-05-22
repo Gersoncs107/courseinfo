@@ -1,11 +1,19 @@
 const App = () => {
-  const course = 'Desenvolvimento de aplicação Half Stack'
-  const part1 = 'Fundamentos da biblioteca React'
-  const exercises1 = 10
-  const part2 = 'Usando props para passar dados'
-  const exercises2 = 7
-  const part3 = 'Estado de um componente'
-  const exercises3 = 14
+  const course = 'Half Stack application development'
+  const part1 = {
+    name: 'Fundamentals of the React library',
+    exercises: 10
+  }
+  const part2 = {
+    name: 'Using props to pass data',
+    exercises: 7
+  }
+  
+  const part3 = {
+    name: 'Component state',
+    exercises: 14
+  }
+  
 
   return (
    <div>

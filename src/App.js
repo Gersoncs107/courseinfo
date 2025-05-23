@@ -14,15 +14,13 @@ const App = () => {
     name: 'Component state',
     exercises: 14
   }
-  ]
+]
   
-
-
-  return (
+return (
    <div>
     <Header course= {course}/>
-    <Content/>
-    <Total/>
+    <Content parts={parts}/>
+    <Total parts={parts}/>
    </div> 
   )
 }

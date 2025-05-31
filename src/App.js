@@ -4,8 +4,14 @@ const Button = () => {
 
 }
 
-const Statistics = () => {
-  
+const Statistics = (props) => {
+  return (
+    <div>
+      <StatisticLine text='Good' value={() => setGood(good + 1)} />
+      <StatisticLine text='Neutral' value={() => setGood(neutral + 1)}/>
+      <StatisticLine text='Bad' value={() => setGood(bad + 1)}/>
+    </div>
+  )
 }
 
 const App = () => {

@@ -1,7 +1,11 @@
 import { useState } from 'react'
 
-const Button = () => {
-
+const Button = ({onClick, text}) => {
+ return (
+  <button onClick={onClick}>
+    {text}
+  </button>
+ )
 }
 
 const Statistics = (props) => {

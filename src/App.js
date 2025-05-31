@@ -1,5 +1,13 @@
 import { useState } from 'react'
 
+const Button = () => {
+
+}
+
+const Statistics = () => {
+  
+}
+
 const App = () => {
 
   const [good, setGood] = useState(0)

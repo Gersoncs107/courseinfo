@@ -45,18 +45,7 @@ return (
     <Button onClick={() => setNeutral(neutral + 1)} text='Neutral'/>
     <Button onClick={() => setBad(bad + 1)} text='Bad'/>
     <h1>Statistics</h1>
-    {good + neutral + bad === 0 ? (
-      <p>No feedback given</p>
-    ) : (
-      <div>
-        <p>Good: {good}</p>
-        <p>Neutral: {neutral}</p>
-        <p>Bad: {bad}</p>
-        <p>Total: {good + neutral + bad}</p>
-        <p>Average: {(good - bad) / (good + neutral + bad)}</p>
-        <p>Positive: {(good / (good + neutral + bad)) * 100} %</p>
-      </div>
-    )}
+    <Statistics good={good} neutral={neutral} bad={bad}/>
    </div> 
   )
 }

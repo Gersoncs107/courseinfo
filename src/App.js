@@ -12,12 +12,20 @@ const StatisticLine = ({text, value}) => (
   <p>{text}: {value}</p>
 )
 
-const Statistics = (props) => {
+const Statistics = ({good, neutral , bad}) => {
+  const total = good + neutral + bad
+  const average  = total === 0 ? 0 : (good - bad) / total
+  const positive = total === 0 ? 0 : (good / total) * 100
+
+  if( total === 0) {
+    return <p>No feedback given</p>
+  } 
+
   return (
     <div>
-      <StatisticLine text='Good' value={() => setGood(good + 1)} />
-      <StatisticLine text='Neutral' value={() => setGood(neutral + 1)}/>
-      <StatisticLine text='Bad' value={() => setGood(bad + 1)}/>
+      <StatisticLine text='Good' value={good}/>  
+      <StatisticLine text='Neutral' value={neutral}/>  
+      <StatisticLine text='Bad' value={bad}/>  
     </div>
   )
 }

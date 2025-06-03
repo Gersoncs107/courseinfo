@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-const Header = () => {
-
+const Header = (props) => {
+ return <h1>{props.course}</h1>
 }
 
 const Content = () => {

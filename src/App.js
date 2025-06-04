@@ -8,6 +8,12 @@ const Content = () => {
 
 }
 
+const Part = (props)  => {
+  return (
+    <p>{props.part}{props.exercises}</p>
+  )
+}
+
 const Total = (props) => {
   return (
     <p>

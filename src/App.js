@@ -8,8 +8,12 @@ const Content = () => {
 
 }
 
-const Total = () => {
-
+const Total = (props) => {
+  return (
+    <p>
+      Number of exercises {props.total}
+    </p>
+  )
 }
 
 const App = () => {
@@ -20,6 +24,8 @@ const App = () => {
   const exercises2 = 7
   const part3 = 'Component state'
   const exercises3 = 14
+
+  const total = exercises1 + exercises2 + exercises3
 
   return (
     <div>
@@ -33,7 +39,7 @@ const App = () => {
       <p>
         {part3} {exercises3}
       </p>
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <Total/>
     </div>
   )
 }

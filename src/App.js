@@ -4,8 +4,14 @@ const Header = (props) => {
  return <h1>{props.course}</h1>
 }
 
-const Content = () => {
-
+const Content = ({part, exercises}) => {
+  return (
+    <div>
+      <Part part={part} exercises={exercises} />
+      <Part part={part} exercises={exercises} />
+      <Part part={part} exercises={exercises} />
+    </div>
+  )
 }
 
 const Part = (props)  => {

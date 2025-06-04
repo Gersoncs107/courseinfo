@@ -39,7 +39,7 @@ const App = () => {
       <p>
         {part3} {exercises3}
       </p>
-      <Total/>
+      <Total total={total}/>
     </div>
   )
 }

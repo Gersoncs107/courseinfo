@@ -1,37 +1,30 @@
-const Header = ({ course }) => <h1>{course}</h1>
+import { useState } from 'react'
 
-const Part = ({ name, exercises }) => (
-  <p>{name} {exercises}</p>
-)
-
-const Content = ({ parts }) => (
-  <div>
-    {parts.map((part, index) => (
-      <Part key={index} name={part.name} exercises={part.exercises} />
-    ))}
-  </div>
-)
-
-const Total = ({ parts }) => {
-  const total = parts.reduce((sum, part) => sum + part.exercises, 0)
+const Button = () => {
   return (
-    <p><strong>Number of exercises {total}</strong></p>
+    <button onClick={() => console.log('Button clicked!')}>
+      Click me
+    </button>
   )
 }
 
 const App = () => {
-  const course = 'Half Stack application development'
-  const parts = [
-    { name: 'Fundamentals of the React library', exercises: 10 },
-    { name: 'Using props to pass data', exercises: 7 },
-    { name: 'Component state', exercises: 14 }
+  const anecdotes = [
+    'If it hurts to do something, do it more often.',
+    'Hiring manpower for a software project that is already late makes it even later!',
+    'The first 90% of the code accounts for the first 10% of the development time... The other 10% of the code accounts for the other 90% of the development time.',
+    'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
+    'Premature optimization is the root of all evil.',
+    'First of all, debugging is twice as hard as writing the code. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.',
+    'Programming without the extremely heavy use of console.log is the same as a doctor refusing to use X-rays or blood tests when diagnosing patients.',
+    'The only way to go fast is to go well.'
   ]
+   
+  const [selected, setSelected] = useState(0)
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />    
-      <Total parts={parts} />
+      {anecdotes[selected]}
     </div>
   )
 }

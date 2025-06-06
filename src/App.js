@@ -28,8 +28,8 @@ const App = () => {
 
   return (
     <div>
-      {anecdotes[selected]}
-      <Button next={ () => console.log(`Button clicked! ${getRandom(0, 10)}`)} text={'Next Anecdote'} />
+      <p>{anecdotes[selected]}</p>
+      <Button next={() => setSelected(getRandom(0, anecdotes.length - 1))} text={'Next Anecdote'} />
     </div>
   )
 }

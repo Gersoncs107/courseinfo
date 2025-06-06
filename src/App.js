@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 const random =  Math.random() * (10 -1) + 1
 
-const Button = () => {
+const Button = ({next, text}) => {
   return (
-    <button onClick={() => console.log(`Button clicked! ${random}`)}>
-      Click me
+    <button onClick={next}>
+      {text}
     </button>
   )
 }
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div>
       {anecdotes[selected]}
-      <Button />
+      <Button next={ () => console.log(`Button clicked! ${random}`)} text={'Next Anecdote'} />
     </div>
   )
 }

@@ -4,6 +4,12 @@ const getRandom = (min, max) =>{
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+const Vote = ({vote, text}) => {
+  return (
+    <button onClick={vote}>{text}</button>
+  )
+}
+
 const Button = ({next, text}) => {
   return (
     <button onClick={next}>
@@ -30,6 +36,7 @@ const App = () => {
     <div>
       <p>{anecdotes[selected]}</p>
       <p>Index: {selected}</p>
+      
       <Button next={() => setSelected(getRandom(0, anecdotes.length - 1))} text={'Next Anecdote'} />
     </div>
   )

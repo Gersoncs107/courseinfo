@@ -31,6 +31,7 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
+  const [vote, setVote] = useState(0)
 
   return (
     <div>

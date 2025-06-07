@@ -36,7 +36,7 @@ const App = () => {
     <div>
       <p>{anecdotes[selected]}</p>
       <p>Index: {selected}</p>
-      
+      <Vote vote={()=> console.log('Vote Clicked')} text={'Vote'}/>
       <Button next={() => setSelected(getRandom(0, anecdotes.length - 1))} text={'Next Anecdote'} />
     </div>
   )

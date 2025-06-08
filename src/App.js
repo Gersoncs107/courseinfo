@@ -31,7 +31,7 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
-  const [votes, setVotes] = useState([anecdotes.length].fill(0))
+  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0))
 
   const handleVote = () => {
     const newVotes = [...votes]

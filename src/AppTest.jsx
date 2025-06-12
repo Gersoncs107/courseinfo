@@ -1,7 +1,4 @@
-
-const Note = ({note}) =>{
-    return <li>{note.content}</li>
-}
+import Note from "./components/Note"
 
 const AppTest = ({notes}) => {
 return (

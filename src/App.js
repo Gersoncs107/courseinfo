@@ -6,8 +6,8 @@ const Part = ({ name, exercises }) => (
 
 const Content = ({ parts }) => (
   <div>
-    {parts.map((part, index) => (
-      <Part key={index} name={part.name} exercises={part.exercises} />
+    {parts.map((part) => (
+      <Part key={part.id} name={part.name} exercises={part.exercises} />
     ))}
   </div>
 )
@@ -76,7 +76,7 @@ const App = () => {
   ]
 
 
-  return <Course course={course} />
+  return <Course course={courses} />
 }
 
 export default App

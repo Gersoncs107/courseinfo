@@ -3,6 +3,11 @@ import Note from "./components/Note"
 
 const AppTest = (props) => {
     const [notes, setNotes] = useState(props.notes)
+
+    const addNote = (event) => {
+        event.preventDefault()
+        console.log("button clicked", event.target)
+    }
 return (
     <div>
         <h1>Notes</h1>
@@ -11,6 +16,11 @@ return (
             <Note key={note.id} note={note}/>
             )}
         </ul>
+            <form onSubmit={addNote}>
+                <input type="text" />
+                <button type="submit">Save</button>
+            </form>
+
     </div>
     )        
 }

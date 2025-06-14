@@ -4,6 +4,7 @@ import Note from "./components/Note"
 const AppTest = (props) => {
     const [notes, setNotes] = useState(props.notes)
     const [newNote, setNewNote] = useState('')
+    const [showAll, setShowAll] =useState(true)
 
     const addNote = (event) => {
         event.preventDefault()

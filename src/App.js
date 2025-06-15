@@ -7,10 +7,20 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
 
+  const addContact = (event) => {
+    event.preventDefault()
+    console.log('Add Contact');
+    
+  }
+
+  const handleContact = (event) => {
+    console.log('Contact Add', event.target.value)
+  }
+
   return (
     <div>
       <h2>Phonebook</h2>
-      <form>
+      <form onSubmit={addContact}>
         <div>
           Name: <input />
         </div>               

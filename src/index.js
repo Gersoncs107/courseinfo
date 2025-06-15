@@ -22,5 +22,5 @@ const notes = [
 ]
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AppTest notes={notes} />
+  <App />
 )

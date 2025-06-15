@@ -22,7 +22,7 @@ const App = () => {
       <h2>Phonebook</h2>
       <form onSubmit={addContact}>
         <div>
-          Name: <input />
+          Name: <input value={newName} onChange={handleContact} />
         </div>               
         <div>
           <button type="submit">add</button>

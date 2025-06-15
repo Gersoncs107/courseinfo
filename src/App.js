@@ -1,5 +1,4 @@
 import Course from "./components/Course"
-
 import { useState } from 'react'
 
 const App = () => {
@@ -14,7 +13,7 @@ const App = () => {
       <form>
         <div>
           Name: <input />
-        </div>
+        </div>               
         <div>
           <button type="submit">add</button>
         </div>

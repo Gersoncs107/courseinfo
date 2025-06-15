@@ -26,7 +26,10 @@ const App = () => {
 
   const handleContact = (event) => {
     console.log('Contact Add', event.target.value)
-    setNewName(event.target.value)
+    setNewName(event.target.value)  
+  }
+  const handleNumber = (event) => {
+    console.log('Contact Add', event.target.value)
     setNewNumber(event.target.value)
   }
 
@@ -38,7 +41,7 @@ const App = () => {
           Name: <input value={newName} onChange={handleContact} />
         </div>
         <div>
-          Number: <input value={newNumber} onChange={handleContact} />
+          Number: <input value={newNumber} onChange={handleNumber} />
         </div>
 
         <div>

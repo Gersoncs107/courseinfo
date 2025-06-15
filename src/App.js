@@ -17,7 +17,7 @@ const App = () => {
     const contactObject = {
       name: newName,
       number: newNumber,
-      id: person.length + 1
+      id: persons.length + 1
     }
     setPersons(persons.concat(contactObject))
     setNewName('')
@@ -27,6 +27,7 @@ const App = () => {
   const handleContact = (event) => {
     console.log('Contact Add', event.target.value)
     setNewName(event.target.value)
+    setNewNumber(event.target.value)
   }
 
   return (
@@ -37,7 +38,7 @@ const App = () => {
           Name: <input value={newName} onChange={handleContact} />
         </div>
         <div>
-          Number: <input />
+          Number: <input value={newNumber} onChange={handleContact} />
         </div>
 
         <div>

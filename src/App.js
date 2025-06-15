@@ -11,7 +11,9 @@ const App = () => {
     event.preventDefault()
     console.log('Add Contact')
     const contactObject = {
-      name: newName
+      name: newName,
+      number: null,
+      id: null
     }
     setPersons(persons.concat(contactObject))
     setNewName('')

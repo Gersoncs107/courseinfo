@@ -21,15 +21,13 @@ const App = () => {
     }
     setPersons(persons.concat(contactObject))
     setNewName('')
-    
+    console.log(newName, newNumber)
   }
 
   const handleContact = (event) => {
-    console.log('Contact Add', event.target.value)
     setNewName(event.target.value)  
   }
   const handleNumber = (event) => {
-    console.log('Contact Add', event.target.value)
     setNewNumber(event.target.value)
   }
 

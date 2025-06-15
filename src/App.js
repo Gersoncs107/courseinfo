@@ -23,6 +23,7 @@ const App = () => {
     }
     setPersons(persons.concat(contactObject))
     setNewName('')
+    setNewNumber('')
     console.log(newName, newNumber)
   }
 

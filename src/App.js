@@ -9,14 +9,15 @@ const App = () => {
     { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
   ]) 
   const [newName, setNewName] = useState('')
+  const [newNumber, setNewNumber] = useState('')
 
   const addContact = (event) => {
     event.preventDefault()
     console.log('Add Contact')
     const contactObject = {
       name: newName,
-      number: null,
-      id: null
+      number: newNumber,
+      id: person.length + 1
     }
     setPersons(persons.concat(contactObject))
     setNewName('')
@@ -34,14 +35,18 @@ const App = () => {
       <form onSubmit={addContact}>
         <div>
           Name: <input value={newName} onChange={handleContact} />
-        </div>               
+        </div>
+        <div>
+          Number: <input />
+        </div>
+
         <div>
           <button type="submit">add</button>
         </div>
       </form>
       <h2>Numbers</h2>
       <ul>
-        {persons.map(person => <li>{person.name}</li>)}
+        {persons.map(person => <li key={person.id}>{person.name} {person.number}</li>)}
       </ul>
     </div>
   )

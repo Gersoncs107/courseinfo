@@ -9,12 +9,18 @@ const App = () => {
 
   const addContact = (event) => {
     event.preventDefault()
-    console.log('Add Contact');
+    console.log('Add Contact')
+    const contactObject = {
+      name: newName
+    }
+    setPersons(persons.concat(contactObject))
+    setNewName('')
     
   }
 
   const handleContact = (event) => {
     console.log('Contact Add', event.target.value)
+    setNewName(event.target.value)
   }
 
   return (

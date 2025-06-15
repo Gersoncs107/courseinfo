@@ -21,7 +21,10 @@ const App = () => {
       number: newNumber,
       id: persons.length + 1
     }
-    if(persons.some(person => person.name === newName)) {
+    
+    if(persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
+      setNewName('')
+      setNewNumber('')
       alert(`${newName} is already added to phonebook`)
       return
     }

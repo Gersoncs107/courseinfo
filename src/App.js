@@ -21,6 +21,15 @@ const App = () => {
       number: newNumber,
       id: persons.length + 1
     }
+    if(persons.some(person => person.name === newName)) {
+      alert(`${newName} is already added to phonebook`)
+      return
+    }
+    if(newName === '' || newNumber === '') {
+      alert('Name and number cannot be empty')
+      return
+    }
+
     setPersons(persons.concat(contactObject))
     setNewName('')
     setNewNumber('')

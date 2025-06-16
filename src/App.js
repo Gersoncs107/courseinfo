@@ -1,6 +1,10 @@
 import Course from "./components/Course"
 import { useState } from 'react'
 
+const Persons = (props) => {
+  return <li>{props.name} {props.number}</li>
+}
+
 const PersonsForm = (props) => {
   return (
     <form onSubmit={props.onSubmit}>
@@ -66,7 +70,9 @@ const App = () => {
       /> 
       <h2>Numbers</h2>
       <ul>
-        {persons.map(person => <li key={person.id}>{person.name} {person.number}</li>)}
+        {persons.map(person =>
+          <Persons key={person.name} name={person.name} number={person.number}/>
+        )}
       </ul>
     </div>
   )

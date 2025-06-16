@@ -1,7 +1,15 @@
 import Course from "./components/Course"
 import { useState } from 'react'
 
-
+const PersonsForm = (props) => {
+  return (
+    <form onSubmit={props.onSubmit}>
+      <div>Name: <input value={props.newName} onChange={props.handleContact}/></div>
+      <div>Number: <input value={props.newNumber} onChange={props.handleNumber}/> </div>
+      <div><button type="submit">Add</button></div>
+    </form>
+  )
+}
 
 const App = () => {
   const [persons, setPersons] = useState([
@@ -49,18 +57,13 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <form onSubmit={addContact}>
-        <div>
-          Name: <input value={newName} onChange={handleContact} />
-        </div>
-        <div>
-          Number: <input value={newNumber} onChange={handleNumber} />
-        </div>
-
-        <div>
-          <button type="submit">Add</button>
-        </div>
-      </form>
+      <PersonsForm 
+        onSubmit={addContact}
+        newName={newName}
+        handleContact={handleContact}
+        newNumber={newNumber}
+        handleNumber={handleNumber}
+      /> 
       <h2>Numbers</h2>
       <ul>
         {persons.map(person => <li key={person.id}>{person.name} {person.number}</li>)}

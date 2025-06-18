@@ -25,6 +25,17 @@ const App = () => {
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
 
+  const filterContact = (event) => {
+    const filterValue = event.target.value.toLowerCase()
+    console.log('Filter value:', filterValue)
+    const filteredPersons = persons.filter(person => 
+    person.name.toLowerCase().includes(filterValue) || 
+    person.number.includes(filterValue)
+    )
+    console.log('Filtered persons:', filteredPersons)
+    setPersons(filteredPersons)
+  }
+
   const addContact = (event) => {
     event.preventDefault()
     console.log('Add Contact')
@@ -61,7 +72,9 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      
+      <div>
+        filter shown with <input onChange={filterContact}/>
+      </div>
       <h2>Add a new</h2>
       <PersonsForm 
         onSubmit={addContact}

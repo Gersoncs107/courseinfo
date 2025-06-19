@@ -76,9 +76,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <div>
-        filter shown with <input onChange={filterContact}/>
-      </div>
+      <Filter onChange={filterContact}/>
       <h2>Add a new</h2>
       <PersonsForm 
         onSubmit={addContact}

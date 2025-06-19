@@ -1,6 +1,9 @@
 import Course from "./components/Course"
 import { useState } from 'react'
 
+const Filter = (props) => {
+
+}
 
 const Persons = (props) => {
   return <li>{props.name} {props.number}</li>

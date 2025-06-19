@@ -1,5 +1,4 @@
-import Course from "./components/Course"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Filter = (props) => {
   return <div>Filter shown with <input onChange={props.onChange}/></div>
@@ -28,18 +27,22 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
+  const [filteredPersons, setFilteredPersons] = useState(persons);
   const [filter, setFilter] = useState('')
 
-  const filterContact = (event) => {
-    const filterValue = event.target.value.toLowerCase()
-    console.log('Filter value:', filterValue)
-    const filteredPersons = persons.filter(person => 
-    person.name.toLowerCase().includes(filterValue) || 
-    person.number.includes(filterValue)
+
+  useEffect(() => {
+    setFilteredPersons(
+      persons.filter(person =>
+        person.name.toLowerCase().includes(filter.toLowerCase()) ||
+        person.number.includes(filter)
+      )
     )
-    console.log('Filtered persons:', filteredPersons)
-    setPersons(filteredPersons)
-  }
+  }, [persons, filter])
+
+  const filterContact = (event) => {
+    setFilter(event.target.value)
+  };
 
   const addContact = (event) => {
     event.preventDefault()
@@ -88,7 +91,7 @@ const App = () => {
       /> 
       <h2>Numbers</h2>
       <ul>
-        {persons.map(person =>
+        {filteredPersons.map(person =>
           <Persons key={person.name} name={person.name} number={person.number}/>
         )}
       </ul>

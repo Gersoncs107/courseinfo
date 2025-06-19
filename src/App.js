@@ -2,7 +2,7 @@ import Course from "./components/Course"
 import { useState } from 'react'
 
 const Filter = (props) => {
-  
+  return <div>Filter shown with <input onChange={props.onChange}/></div>
 }
 
 const Persons = (props) => {

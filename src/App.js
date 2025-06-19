@@ -28,6 +28,7 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
+  const [filter, setFilter] = useState('')
 
   const filterContact = (event) => {
     const filterValue = event.target.value.toLowerCase()

@@ -31,12 +31,14 @@ const App = () => {
   const [filter, setFilter] = useState('')
 
   const filterContact = (event) => {
-    const personsToShow = persons.filter( person => {
-      person.name.toLowerCase().includes(filter.toLowerCase()) ||
-      person.number.includes(filter)
-    })
+    const filterValue = event.target.value.toLowerCase()
+    console.log('Filter value:', filterValue)
+    const filteredPersons = persons.filter(person => 
+    person.name.toLowerCase().includes(filterValue) || 
+    person.number.includes(filterValue)
+    )
     console.log('Filtered persons:', filteredPersons)
-    setPersons(personsToShow)
+    setPersons(filteredPersons)
   }
 
   const addContact = (event) => {

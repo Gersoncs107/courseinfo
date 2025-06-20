@@ -45,30 +45,31 @@ const App = () => {
   };
 
   const addContact = (event) => {
-    event.preventDefault()
-    console.log('Add Contact')
-    const contactObject = {
-      name: newName,
-      number: newNumber,
-      id: persons.length + 1
-    }
-    
-    if(persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
-      alert(`${newName} is already added to phonebook`)
-      setNewName('')
-      setNewNumber('')
-      return
-    }
-    if(newName === '' || newNumber === '') {
-      alert('Name and number cannot be empty')
-      return
-    }
+  event.preventDefault();
 
-    setPersons(persons.concat(contactObject))
-    setNewName('')
-    setNewNumber('')
-    console.log(newName, newNumber)
+  if (persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
+    alert(`${newName} is already added to phonebook`);
+    setNewName('');
+    setNewNumber('');
+    return;
   }
+
+  if (newName === '' || newNumber === '') {
+    alert('Name and number cannot be empty');
+    return;
+  }
+
+  const contactObject = {
+    name: newName,
+    number: newNumber,
+    id: persons.length + 1
+  };
+
+  setPersons(persons.concat(contactObject));
+  setNewName('');
+  setNewNumber('');
+  console.log(newName, newNumber);
+};
 
   const handleContact = (event) => {
     setNewName(event.target.value)  
@@ -92,7 +93,7 @@ const App = () => {
       <h2>Numbers</h2>
       <ul>
         {filteredPersons.map(person =>
-          <Persons key={person.name} name={person.name} number={person.number}/>
+          <Persons key={person.id} name={person.name} number={person.number}/>
         )}
       </ul>
     </div>

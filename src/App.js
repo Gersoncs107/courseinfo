@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react'
 import Persons from './components/Persons'
 import PersonsForm from './components/PersonsForm'
-
-const Filter = (props) => {
-  return <div>Filter shown with <input onChange={props.onChange}/></div>
-}
+import Filter from './components/Filter'
 
 const App = () => {
   const [persons, setPersons] = useState([

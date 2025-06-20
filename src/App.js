@@ -4,8 +4,18 @@ const Filter = (props) => {
   return <div>Filter shown with <input onChange={props.onChange}/></div>
 }
 
-const Persons = (props) => {
-  return <li>{props.name} {props.number}</li>
+const Person = ({name, number}) => {
+  return <li>{name} {number}</li>
+}
+
+const Persons = ({persons}) => {
+  return (
+    <ul>
+      {persons.map(person =>
+        <Person key={person.id} name={person.name} number={person.number}/>
+      )}
+    </ul>
+  )
 }
 
 const PersonsForm = (props) => {
@@ -30,7 +40,6 @@ const App = () => {
   const [filteredPersons, setFilteredPersons] = useState(persons);
   const [filter, setFilter] = useState('')
 
-
   useEffect(() => {
     setFilteredPersons(
       persons.filter(person =>
@@ -45,31 +54,31 @@ const App = () => {
   };
 
   const addContact = (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  if (persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
-    alert(`${newName} is already added to phonebook`);
+    if (persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
+      alert(`${newName} is already added to phonebook`);
+      setNewName('');
+      setNewNumber('');
+      return;
+    }
+
+    if (newName === '' || newNumber === '') {
+      alert('Name and number cannot be empty');
+      return;
+    }
+
+    const contactObject = {
+      name: newName,
+      number: newNumber,
+      id: persons.length + 1
+    };
+
+    setPersons(persons.concat(contactObject));
     setNewName('');
     setNewNumber('');
-    return;
-  }
-
-  if (newName === '' || newNumber === '') {
-    alert('Name and number cannot be empty');
-    return;
-  }
-
-  const contactObject = {
-    name: newName,
-    number: newNumber,
-    id: persons.length + 1
+    console.log(newName, newNumber);
   };
-
-  setPersons(persons.concat(contactObject));
-  setNewName('');
-  setNewNumber('');
-  console.log(newName, newNumber);
-};
 
   const handleContact = (event) => {
     setNewName(event.target.value)  
@@ -91,11 +100,7 @@ const App = () => {
         handleNumber={handleNumber}
       /> 
       <h2>Numbers</h2>
-      <ul>
-        {filteredPersons.map(person =>
-          <Persons key={person.id} name={person.name} number={person.number}/>
-        )}
-      </ul>
+      <Persons persons={filteredPersons} />
     </div>
   )
 }

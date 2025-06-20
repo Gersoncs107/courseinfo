@@ -1,31 +1,9 @@
 import { useState, useEffect } from 'react'
+import Persons from './components/Persons'
+import PersonsForm from './components/PersonsForm'
 
 const Filter = (props) => {
   return <div>Filter shown with <input onChange={props.onChange}/></div>
-}
-
-const Person = ({name, number}) => {
-  return <li>{name} {number}</li>
-}
-
-const Persons = ({persons}) => {
-  return (
-    <ul>
-      {persons.map(person =>
-        <Person key={person.id} name={person.name} number={person.number}/>
-      )}
-    </ul>
-  )
-}
-
-const PersonsForm = (props) => {
-  return (
-    <form onSubmit={props.onSubmit}>
-      <div>Name: <input value={props.newName} onChange={props.handleContact}/></div>
-      <div>Number: <input value={props.newNumber} onChange={props.handleNumber}/> </div>
-      <div><button type="submit">Add</button></div>
-    </form>
-  )
 }
 
 const App = () => {

@@ -53,13 +53,16 @@ const App = () => {
     setFilter(event.target.value)
   };
 
+  const resetContact = () => {
+    setNewName('');
+    setNewNumber('');
+  }
   const addContact = (event) => {
     event.preventDefault();
 
     if (persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
       alert(`${newName} is already added to phonebook`);
-      setNewName('');
-      setNewNumber('');
+      resetContact()
       return;
     }
 
@@ -75,8 +78,7 @@ const App = () => {
     };
 
     setPersons(persons.concat(contactObject));
-    setNewName('');
-    setNewNumber('');
+    resetContact()
     console.log(newName, newNumber);
   };
 

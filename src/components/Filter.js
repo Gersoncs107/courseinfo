@@ -1,4 +1,4 @@
-const Filter = (props) => {
-  return <div>Filter shown with <input onChange={props.onChange}/></div>
+const Filter = ({onChange}) => {
+  return <div>Filter shown with <input onChange={onChange}/></div>
 }
 export default Filter;

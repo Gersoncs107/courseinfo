@@ -1,8 +1,8 @@
-const PersonsForm = (props) => {
+const PersonsForm = ({onSubmit, newName, handleContact, newNumber, handleNumber}) => {
   return (
-    <form onSubmit={props.onSubmit}>
-      <div>Name: <input value={props.newName} onChange={props.handleContact}/></div>
-      <div>Number: <input value={props.newNumber} onChange={props.handleNumber}/> </div>
+    <form onSubmit={onSubmit}>
+      <div>Name: <input value={newName} onChange={handleContact}/></div>
+      <div>Number: <input value={newNumber} onChange={handleNumber}/> </div>
       <div><button type="submit">Add</button></div>
     </form>
   )

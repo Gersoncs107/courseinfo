@@ -7,14 +7,16 @@ const AppTest = () => {
     const [newNote, setNewNote] = useState('')
     const [showAll, setShowAll] =useState(true)
 
-    useEffect(() => {
+    const hook = () => {
         console.log('effect(efeito)')
         axios.get('http://localhost:3001/notes')
         .then((response) => {
          console.log('promise fulfilled')
          setNotes(response.data)
         })
-    }, [])
+    }
+
+    useEffect(hook , [])
     console.log('render', notes.length, 'notes')
 
     const addNote = (event) => {

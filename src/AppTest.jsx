@@ -6,6 +6,10 @@ const AppTest = (props) => {
     const [newNote, setNewNote] = useState('')
     const [showAll, setShowAll] =useState(true)
 
+    useEffect(() => {
+
+    }, [])
+
     const addNote = (event) => {
         event.preventDefault()
         const noteObject = {

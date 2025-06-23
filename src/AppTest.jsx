@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Note from "./components/Note"
 
 const AppTest = (props) => {
-    const [notes, setNotes] = useState(props.notes)
+    const [notes, setNotes] = useState([])
     const [newNote, setNewNote] = useState('')
     const [showAll, setShowAll] =useState(true)
 

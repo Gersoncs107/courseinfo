@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Note from "./components/Note"
+import axios from "axios";
 
 const AppTest = (props) => {
     const [notes, setNotes] = useState([])
@@ -7,7 +8,12 @@ const AppTest = (props) => {
     const [showAll, setShowAll] =useState(true)
 
     useEffect(() => {
-
+        console.log('effect(efeito)')
+        axios.get('http://localhost:3001/notes')
+        .then((response) => {
+         console.log('promise fulfilled')
+         setNotes(response.data)
+        })
     }, [])
 
     const addNote = (event) => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Note from "./components/Note"
 
 const AppTest = (props) => {

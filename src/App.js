@@ -11,7 +11,6 @@ const App = () => {
   const [filteredPersons, setFilteredPersons] = useState(persons);
   const [filter, setFilter] = useState('')
 
-  // Fetch persons from server once
   useEffect(() => {
     axios.get('http://localhost:3001/persons')
       .then((response) => {
@@ -19,7 +18,6 @@ const App = () => {
       })
   }, [])
 
-  // Update filteredPersons whenever persons or filter changes
   useEffect(() => {
     setFilteredPersons(
       persons.filter(person =>

@@ -31,7 +31,6 @@ const AppTest = () => {
     }
 
     const handleNoteChange = (event) => {
-        console.log("note changed", event.target.value)
         setNewNote(event.target.value)
     }
 

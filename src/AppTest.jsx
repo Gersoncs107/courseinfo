@@ -42,6 +42,10 @@ const AppTest = () => {
 
     }
 
+    const toggleImportanceOf = (id)=> {
+        console.log('importance of ' + id + ' needs to be toggled')
+    }
+
     const handleNoteChange = (event) => {
         setNewNote(event.target.value)
     }

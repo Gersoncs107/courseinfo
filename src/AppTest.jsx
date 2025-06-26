@@ -62,7 +62,7 @@ return (
         </div>
         <ul>
             {notesToShow.map(note => 
-            <Note key={note.id} note={note}/>
+            <Note key={note.id} note={note} toggleImportance={toggleImportanceOf(note.id)}/>
             )}
         </ul>
             <form onSubmit={addNote}>

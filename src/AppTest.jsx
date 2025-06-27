@@ -8,13 +8,13 @@ const AppTest = () => {
     const [newNote, setNewNote] = useState('')
     const [showAll, setShowAll] =useState(true)
 
-    useEffect(() => {
-    console.log('effect (efeito)')
-    axios.get('http://localhost:3001/notes').then((response) => {
-    console.log('promise fulfilled (promessa resolvida)')
-    setNotes(response.data)
-  })
-}, [])
+     useEffect(() => {
+    noteService
+      .getAll()
+      .then(response => {
+        setNotes(response.data)
+      })
+  }, [])
 
     const addNote = (event) => {
         event.preventDefault()

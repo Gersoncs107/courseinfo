@@ -3,7 +3,7 @@
     {
       "id": "1",
       "content": "HTML is easy",
-      "important": true
+      "important": false
     },
     {
       "id": "2",
@@ -18,12 +18,12 @@
     {
       "id": "ecb9",
       "content": "Learning React",
-      "important": false
+      "important": true
     },
     {
       "id": "b402",
       "content": "Learn ReactJS",
-      "important": false
+      "important": true
     }
   ]
 }

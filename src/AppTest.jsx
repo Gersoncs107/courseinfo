@@ -24,8 +24,8 @@ const AppTest = () => {
         }
 
         noteService.create(noteObject)
-        .then((response) => {
-            setNotes(notes.concat(response.data))
+        .then((returnedNote) => {
+            setNotes(notes.concat(returnedNote))
             setNewNote('')
         })
 

@@ -24,6 +24,11 @@
       "id": "b402",
       "content": "Learn ReactJS",
       "important": true
+    },
+    {
+      "id": "e949",
+      "content": "Promises chaining",
+      "important": true
     }
   ]
 }

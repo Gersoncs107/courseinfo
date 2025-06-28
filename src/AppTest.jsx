@@ -37,17 +37,14 @@ const AppTest = () => {
         const note = notes.find( n => n.id === id)
         const changedNote = {...note, important: !note.important}
 
-        axios.put(url, changedNote)
+        noteService
+        .update(id, changedNote)
         .then((response) => {
-            setNotes(notes.map( n => n.id !== id ? n : response.data))
-        })
-    }
-
-    noteService
-    .update(id, changedNote)
-    .then((response) => {
         setNotes(response.data)
     })
+    }
+
+    
 
     const handleNoteChange = (event) => {
         setNewNote(event.target.value)

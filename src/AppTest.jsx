@@ -8,11 +8,11 @@ const AppTest = () => {
     const [newNote, setNewNote] = useState('')
     const [showAll, setShowAll] =useState(true)
 
-     useEffect(() => {
+    useEffect(() => {
     noteService
       .getAll()
-      .then(response => {
-        setNotes(response.data)
+      .then(initialNotes => {
+        setNotes(initialNotes)
       })
   }, [])
 

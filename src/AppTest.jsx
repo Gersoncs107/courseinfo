@@ -43,6 +43,12 @@ const AppTest = () => {
         })
     }
 
+    noteService
+    .update(id, changedNote)
+    .then((response) => {
+        setNotes(response.data)
+    })
+
     const handleNoteChange = (event) => {
         setNewNote(event.target.value)
     }

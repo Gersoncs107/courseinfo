@@ -1,5 +1,11 @@
 const Person = ({name, number}) => {
-  return <li>{name} {number}</li>
+  return (
+    <div>
+      <li>{name} {number}</li>
+      <button type="sumbit">Delete</button>
+    </div>
+    
+  ) 
 }
 
 const Persons = ({persons}) => {

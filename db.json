@@ -1,34 +1,24 @@
 {
-  "notes": [
+  "persons": [
     {
-      "id": "1",
-      "content": "HTML is easy",
-      "important": true
+      "name": "Arto Hellas",
+      "number": "040-123456",
+      "id": 1
     },
     {
-      "id": "2",
-      "content": "Browser can execute only JavaScript",
-      "important": false
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": 2
     },
     {
-      "id": "3",
-      "content": "GET and POST are the most important methods of HTTP protocol",
-      "important": false
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": 3
     },
     {
-      "id": "ecb9",
-      "content": "Learning React",
-      "important": false
-    },
-    {
-      "id": "b402",
-      "content": "Learn ReactJS",
-      "important": true
-    },
-    {
-      "id": "e949",
-      "content": "Promises chaining",
-      "important": true
+      "name": "Mary Poppendieck",
+      "number": "39-23-6423122",
+      "id": 4
     }
   ]
 }

@@ -64,6 +64,10 @@ const App = () => {
     console.log(newName, newNumber);
   };
 
+  const deleteContact = () => {
+   return console.log('delete contact')
+  }
+
   const handleContact = (event) => {
     setNewName(event.target.value)  
   }
@@ -84,7 +88,7 @@ const App = () => {
         handleNumber={handleNumber}
       /> 
       <h2>Numbers</h2>
-      <Persons persons={filteredPersons} />
+      <Persons persons={filteredPersons} onClick={deleteContact}/>
     </div>
   )
 }

@@ -55,7 +55,11 @@ const App = () => {
       id: persons.length + 1
     };
 
-    setPersons(persons.concat(contactObject));
+    axios.post('http://localhost:3001/persons', contactObject)
+    .then((response) => {
+      setPersons(persons.concat(response.data))
+    })
+   
     resetContact()
     console.log(newName, newNumber);
   };

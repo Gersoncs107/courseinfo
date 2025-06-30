@@ -65,6 +65,10 @@ const App = () => {
   };
 
   const deleteContact = (id) => {
+    axios.delete(`http://localhost:3001/persons/${id}`)
+    .then((response) => {
+      setPersons(persons.filter())
+    })
     setPersons(persons.filter(person => person.id !== id))
   }
 

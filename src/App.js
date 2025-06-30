@@ -65,7 +65,7 @@ const App = () => {
   };
 
   const deleteContact = () => {
-   return console.log('delete contact')
+    console.log('delete contact')
   }
 
   const handleContact = (event) => {

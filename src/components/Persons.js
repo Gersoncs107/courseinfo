@@ -1,18 +1,22 @@
-const Person = ({name, number, onclick}) => {
+const Person = ({ name, number, onClick }) => {
   return (
     <li>
       {name} {number}
-      <button type="submit" onClick={onclick}>Delete</button>
+      <button type="button" onClick={onClick}>Delete</button>
     </li>
-  ) 
+  )
 }
 
-const Persons = ({persons}) => {
+const Persons = ({ persons, onClick }) => {
   return (
     <ul>
       {persons.map(person =>
-        <Person key={person.id} name={person.name} number={person.number}
-        onclick={() => onclick(person.id)}/>
+        <Person
+          key={person.id}
+          name={person.name}
+          number={person.number}
+          onClick={() => onClick(person.id)}
+        />
       )}
     </ul>
   )

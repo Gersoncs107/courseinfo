@@ -64,8 +64,8 @@ const App = () => {
     console.log(newName, newNumber);
   };
 
-  const deleteContact = () => {
-    console.log('delete contact')
+  const deleteContact = (id) => {
+    setPersons(persons.filter(person => person.id !== id))
   }
 
   const handleContact = (event) => {

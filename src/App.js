@@ -64,7 +64,9 @@ const App = () => {
     console.log(newName, newNumber);
   };
 
-  const deleteContact = (id) => {
+  const deleteContact = (id, name) => {
+    const confirmDelete = 
+
     axios.delete(`http://localhost:3001/persons/${id}`)
     .then((response) => {
       setPersons(persons.filter(person => person.id !== id))

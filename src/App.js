@@ -68,8 +68,7 @@ const App = () => {
     axios.delete(`http://localhost:3001/persons/${id}`)
     .then((response) => {
       setPersons(persons.filter(person => person.id !== id))
-    })
-    
+    })    
   }
 
   const handleContact = (event) => {

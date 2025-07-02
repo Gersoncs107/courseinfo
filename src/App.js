@@ -51,8 +51,7 @@ const App = () => {
 
     const contactObject = {
       name: newName,
-      number: newNumber,
-      id: persons.length + 1
+      number: newNumber
     };
 
     axios.post('http://localhost:3001/persons', contactObject)
@@ -65,16 +64,17 @@ const App = () => {
   };
 
   const deleteContact = (id, name) => {
-    const confirmDelete = window.confirm(`Delete ${name}?`)
+  const confirmDelete = window.confirm(`Delete ${name}?`);
 
-    if(confirmDelete){
-      axios.delete(`http://localhost:3001/persons/${id}`)
-    .then((response) => {
-      setPersons(persons.filter(person => person.id !== id))
-      }).catch(error => console.log('Error to delete', error))
-    }
-      
+  if (confirmDelete) {
+    axios.delete(`http://localhost:3001/persons/${id}`)
+      .then(() => {
+        setPersons(persons.filter(person => person.id !== id));
+      })
+      .catch(error => console.log('Error to delete', error));
   }
+};
+
 
   const handleContact = (event) => {
     setNewName(event.target.value)  

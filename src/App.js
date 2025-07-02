@@ -65,12 +65,15 @@ const App = () => {
   };
 
   const deleteContact = (id, name) => {
-    const confirmDelete = 
+    const confirmDelete = window.confirm(`Delete ${name}`)
 
-    axios.delete(`http://localhost:3001/persons/${id}`)
+    if(confirm){
+      axios.delete(`http://localhost:3001/persons/${id}`)
     .then((response) => {
       setPersons(persons.filter(person => person.id !== id))
-    })    
+      }).catch(error => console.log('Error to delete', error))
+    }
+      
   }
 
   const handleContact = (event) => {

@@ -67,7 +67,7 @@ const App = () => {
   const deleteContact = (id, name) => {
     const confirmDelete = window.confirm(`Delete ${name}`)
 
-    if(confirm){
+    if(confirmDelete){
       axios.delete(`http://localhost:3001/persons/${id}`)
     .then((response) => {
       setPersons(persons.filter(person => person.id !== id))

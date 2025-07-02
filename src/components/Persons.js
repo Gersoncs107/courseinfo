@@ -15,7 +15,7 @@ const Persons = ({ persons, onClick }) => {
           key={person.id}
           name={person.name}
           number={person.number}
-          onClick={() => onClick(person.id)}
+          onClick={() => onClick(person.id, person.name)}
         />
       )}
     </ul>

@@ -3,6 +3,7 @@ import Persons from './components/Persons'
 import PersonsForm from './components/PersonsForm'
 import Filter from './components/Filter'
 import axios from 'axios'
+import contactService from './services/contactService'
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
@@ -77,16 +78,17 @@ const App = () => {
   };
 
   const deleteContact = (id, name) => {
-  const confirmDelete = window.confirm(`Delete ${name}?`);
+    
+    const confirmDelete = window.confirm(`Delete ${name}?`);
 
-  if (confirmDelete) {
-    axios.delete(`http://localhost:3001/persons/${id}`)
-      .then(() => {
-        setPersons(persons.filter(person => person.id !== id));
-      })
-      .catch(error => console.log('Error to delete', error));
-  }
-};
+    if (confirmDelete) {
+      axios.delete(`http://localhost:3001/persons/${id}`)
+        .then(() => {
+          setPersons(persons.filter(person => person.id !== id));
+        })
+        .catch(error => console.log('Error to delete', error));
+    }
+  };
 
 
   const handleContact = (event) => {

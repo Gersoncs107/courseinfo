@@ -41,7 +41,8 @@ const App = () => {
     const overwriteContact = window.confirm(`${person.name} is already add to the phonebook, replace the old number with a new one?`)
     if (persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
       alert(`${newName} is already added to phonebook`);
-
+      axios.put(`http://localhost:3001/persons/${id}`, contactObject)
+      .then((response) => response.data)
       resetContact()
       return;
     }

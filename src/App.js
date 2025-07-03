@@ -38,15 +38,6 @@ const App = () => {
   const addContact = (event) => {
     event.preventDefault();
 
-    const overwriteContact = window.confirm(`${person.name} is already add to the phonebook, replace the old number with a new one?`)
-    if (persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
-      alert(`${newName} is already added to phonebook`);
-      axios.put(`http://localhost:3001/persons/${id}`, contactObject)
-      .then((response) => response.data)
-      resetContact()
-      return;
-    }
-
     if (newName === '' || newNumber === '') {
       alert('Name and number cannot be empty');
       return;
@@ -56,6 +47,25 @@ const App = () => {
       name: newName,
       number: newNumber
     };
+
+    const existingPerson = persons.find(person => person.name.toLowerCase() === newName.toLowerCase());
+
+    if (existingPerson) {
+      const overwriteContact = window.confirm(
+        `${existingPerson.name} is already added to the phonebook, replace the old number with a new one?`
+      );
+      if (overwriteContact) {
+        axios
+          .put(`http://localhost:3001/persons/${existingPerson.id}`, contactObject)
+          .then((response) => {
+            setPersons(persons.map(person =>
+              person.id !== existingPerson.id ? person : response.data
+            ));
+            resetContact();
+          });
+      }
+      return;
+    }
 
     axios.post('http://localhost:3001/persons', contactObject)
     .then((response) => {

@@ -69,9 +69,9 @@ const App = () => {
       return;
     }
 
-    axios.post('http://localhost:3001/persons', contactObject)
-    .then((response) => {
-      setPersons(persons.concat(response.data))
+    contactService.create(contactObject)
+    .then((returnedContact) => {
+      setPersons(persons.concat(returnedContact))
     })
    
     resetContact()

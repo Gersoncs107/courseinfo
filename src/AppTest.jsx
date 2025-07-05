@@ -46,9 +46,7 @@ const AppTest = () => {
         setNotes(notes.filter( n => n.id !== id))
       })
   }
-
-    
-
+  
     const handleNoteChange = (event) => {
         setNewNote(event.target.value)
     }

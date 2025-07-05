@@ -20,4 +20,4 @@ const Notification = ({message}) => {
     )
 }
 
-export default Note;
+export default Note

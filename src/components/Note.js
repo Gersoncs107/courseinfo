@@ -19,5 +19,4 @@ const Notification = ({message}) => {
         </div>
     )
 }
-
-export default Note
+export { Note, Notification };

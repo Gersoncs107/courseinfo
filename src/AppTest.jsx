@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { usezNote} from "./components/Note"
 import axios from "axios";
-import Note from "./components/Note";
+import {Note, Notification} from "./components/Note";
 import noteService from './services/notes'
 
 const AppTest = () => {

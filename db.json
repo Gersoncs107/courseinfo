@@ -29,6 +29,11 @@
       "id": "e949",
       "content": "Promises chaining",
       "important": false
+    },
+    {
+      "id": "8e59",
+      "content": "Add styles in a react app",
+      "important": true
     }
   ]
 }

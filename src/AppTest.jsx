@@ -58,6 +58,7 @@ const AppTest = () => {
 return (
     <div>
         <h1>Notes</h1>
+        <Notification message={errorMessage}/>
         <div>
             <button onClick={() => setShowAll(!showAll)}>
                 Show {showAll ? 'Important' : 'all'}

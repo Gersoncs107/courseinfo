@@ -8,6 +8,7 @@ const AppTest = () => {
     const [notes, setNotes] = useState([])
     const [newNote, setNewNote] = useState('')
     const [showAll, setShowAll] =useState(true)
+    const [errorMessage, setErrorMessage] = useState('Some error happened...')
 
     useEffect(() => {
     noteService

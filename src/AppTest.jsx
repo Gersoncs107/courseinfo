@@ -4,6 +4,20 @@ import axios from "axios";
 import {Note, Notification} from "./components/Note";
 import noteService from './services/notes'
 
+const Footer = () => {
+  const footerStyle = {
+    color: 'green',
+    fontStyle: 'italic',
+    fontSize: 16
+  }
+
+  return(
+    <div>
+      
+    </div>
+  )
+}
+
 const AppTest = () => {
     const [notes, setNotes] = useState([])
     const [newNote, setNewNote] = useState('')

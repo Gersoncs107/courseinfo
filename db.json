@@ -13,7 +13,7 @@
     {
       "id": "3",
       "content": "GET and POST are the most important methods of HTTP protocol",
-      "important": true
+      "important": false
     },
     {
       "id": "ecb9",
@@ -28,16 +28,11 @@
     {
       "id": "e949",
       "content": "Promises chaining",
-      "important": false
+      "important": true
     },
     {
       "id": "8e59",
       "content": "Add styles in a react app",
-      "important": true
-    },
-    {
-      "id": "a723",
-      "content": "",
       "important": true
     }
   ]

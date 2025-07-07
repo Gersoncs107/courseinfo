@@ -95,7 +95,7 @@ return (
                 <input value={newNote} onChange={handleNoteChange}/>
                 <button type="submit">Save</button>
             </form>
-
+        <Footer/>
     </div>
     )        
 }

@@ -1,39 +1,39 @@
 {
-  "notes": [
+  "persons": [
     {
-      "id": "1",
-      "content": "HTML is easy",
-      "important": false
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": "2"
     },
     {
-      "id": "2",
-      "content": "Browser can execute only JavaScript",
-      "important": false
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": "3"
     },
     {
-      "id": "3",
-      "content": "GET and POST are the most important methods of HTTP protocol",
-      "important": false
+      "id": "4",
+      "name": "Madruga",
+      "number": "456-789-5231"
     },
     {
-      "id": "ecb9",
-      "content": "Learning React",
-      "important": true
+      "id": "d785",
+      "name": "Juca",
+      "number": "455-77878-222"
     },
     {
-      "id": "b402",
-      "content": "Learn ReactJS",
-      "important": false
+      "name": "Mamá",
+      "number": "45664567",
+      "id": "a051"
     },
     {
-      "id": "e949",
-      "content": "Promises chaining",
-      "important": true
+      "name": "Jusé",
+      "number": "554458-5599-00000",
+      "id": "588d"
     },
     {
-      "id": "8e59",
-      "content": "Add styles in a react app",
-      "important": true
+      "id": "3d58",
+      "name": "Cobra",
+      "number": "4545-889-226"
     }
   ]
 }

@@ -12,6 +12,7 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [filteredPersons, setFilteredPersons] = useState(persons);
   const [filter, setFilter] = useState('')
+  const [notification, setNotification ] = useState("Message testing...")
 
   useEffect(() => {
     contactService
@@ -103,6 +104,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={notification}/>
       <Filter onChange={filterContact}/>
       <h2>Add a new</h2>
       <PersonsForm 

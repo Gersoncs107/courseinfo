@@ -4,6 +4,7 @@ import PersonsForm from './components/PersonsForm'
 import Filter from './components/Filter'
 import axios from 'axios'
 import contactService from './services/contactService'
+import Notification from './components/Notification'
 
 const App = () => {
   const [persons, setPersons] = useState([]) 

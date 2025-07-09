@@ -97,7 +97,12 @@ const App = () => {
         .then(() => {
           setPersons(persons.filter(person => person.id !== id));
         })
-        .catch(error => console.log('Error to delete', error));
+        .catch(error => {
+          setNotification(`Information of ${name} has already been removed from server`)
+          setTimeout(() => {
+            setNotification(null)
+          }, 5000);
+        });
     }
   };
 

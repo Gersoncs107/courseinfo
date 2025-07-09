@@ -65,6 +65,10 @@ const App = () => {
             setPersons(persons.map(person =>
               person.id !== existingPerson.id ? person : response.data
             ));
+            setNotification(`Added ${contactObject.name}`)
+            setTimeout(() => {
+              setNotification(null)
+            }, 5000);
             resetContact();
           });
       }

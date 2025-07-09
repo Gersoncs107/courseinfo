@@ -75,6 +75,10 @@ const App = () => {
     .then((returnedContact) => {
       setPersons(persons.concat(returnedContact))
     })
+    setNotification(`Added ${contactObject.name}`)
+    setTimeout(() => {
+      setNotification(null)
+    }, 5000);
    
     resetContact()
     console.log(newName, newNumber);

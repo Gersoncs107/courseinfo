@@ -39,6 +39,14 @@ const App = () => {
     setNewName('');
     setNewNumber('');
   }
+
+  const showNotification = (message) => {
+    setNotification(message)
+    setTimeout(() => {
+      setNotification(null)
+    }, 5000)
+  }
+
   const addContact = (event) => {
     event.preventDefault();
 
@@ -65,10 +73,7 @@ const App = () => {
             setPersons(persons.map(person =>
               person.id !== existingPerson.id ? person : response.data
             ));
-            setNotification(`Added ${contactObject.name}`)
-            setTimeout(() => {
-              setNotification(null)
-            }, 5000);
+            showNotification(`Added ${contactObject.name}`)
             resetContact();
           });
       }
@@ -79,10 +84,7 @@ const App = () => {
     .then((returnedContact) => {
       setPersons(persons.concat(returnedContact))
     })
-    setNotification(`Added ${contactObject.name}`)
-    setTimeout(() => {
-      setNotification(null)
-    }, 5000);
+    showNotification(`Added ${contactObject.name}`)
    
     resetContact()
     console.log(newName, newNumber);
@@ -98,10 +100,7 @@ const App = () => {
           setPersons(persons.filter(person => person.id !== id));
         })
         .catch(error => {
-          setNotification(`Information of ${name} has already been removed from server`)
-          setTimeout(() => {
-            setNotification(null)
-          }, 5000);
+          showNotification(`Information of ${name} has already been removed from server`)
         });
     }
   };
@@ -113,6 +112,7 @@ const App = () => {
   const handleNumber = (event) => {
     setNewNumber(event.target.value)
   }
+
 
   return (
     <div>

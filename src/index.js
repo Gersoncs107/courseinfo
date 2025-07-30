@@ -4,7 +4,7 @@ import App from "./App"
 import AppTest from "./AppTest"
 import './index.css'
 
-const promise = axios.get('http://localhost:3001/notes')
+const promise = axios.get('http://localhost:3001/api/notes')
 .then((response) => {
   const notes = response.data
   ReactDOM.createRoot(document.getElementById("root")).render(

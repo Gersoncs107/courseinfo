@@ -4,13 +4,13 @@ import App from "./App"
 import AppTest from "./AppTest"
 import './index.css'
 
-// const promise = axios.get('http://localhost:3001/notes')
-// .then((response) => {
-//   const notes = response.data
-//   ReactDOM.createRoot(document.getElementById("root")).render(
-//   <AppTest/>
-// )
-// })
+const promise = axios.get('http://localhost:3001/notes')
+.then((response) => {
+  const notes = response.data
+  ReactDOM.createRoot(document.getElementById("root")).render(
+  <AppTest/>
+)
+})
 
 // const notes = [
 //   {
@@ -30,6 +30,6 @@ import './index.css'
 //   },
 // ]
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <App/>
-)
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <App/>
+// )
